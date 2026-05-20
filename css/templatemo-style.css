@@ -526,6 +526,11 @@ footer
   color: #ffffff;
 }
 /* end social icon */
+.video-youtube {
+  width: 500px;
+  height: 280px;
+  margin: auto;
+}
 
 @media only screen and (max-width:360px) {
   .navbar-default .navbar-brand { padding-top: 6px; }
