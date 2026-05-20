@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b, #ffb347);
+    }
+
+    .container{
+      background:white;
+      width:350px;
+      padding:40px;
+      border-radius:15px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    .tabs{
+      display:flex;
+      margin-bottom:20px;
+      border-radius:8px;
+      overflow:hidden;
+    }
+
+    .tabs button{
+      flex:1;
+      padding:12px;
+      border:none;
+      cursor:pointer;
+      background:#eee;
+      font-weight:bold;
+    }
+
+    .tabs button.active{
+      background:#ff4b2b;
+      color:white;
+    }
+
+    form{
+      display:none;
+    }
+
+    form.active{
+      display:block;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+
+    button.submit-btn{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      border:none;
+      border-radius:8px;
+      background:#ff4b2b;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    button.submit-btn:hover{
+      background:#e63e22;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h2 class="title">Welcome</h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showLogin()">Sign In</button>
+      <button class="tab-btn" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="active" method="get">
+      <input type="text" placeholder="Username" id="username" required>
+      <input type="password" placeholder="Password" id="password" required>
+
+      <button type="submit" class="submit-btn">Sign In</button>
+    </form>
+
+    <!-- SIGNUP -->
+    <form id="signupForm">
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+
+      <button type="submit" class="submit-btn">Create Account</button>
+    </form>
+
+  </div>
+
+  <script src="js/login.js">
+    
+  </script>
+
+</body>
+</html>
