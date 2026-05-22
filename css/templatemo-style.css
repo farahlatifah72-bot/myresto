@@ -542,6 +542,10 @@ footer
   color: #555;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 @media only screen and (max-width:360px) {
   .navbar-default .navbar-brand { padding-top: 6px; }
   .img-about { margin-top: 40px; }
