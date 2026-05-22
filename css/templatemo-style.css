@@ -587,18 +587,79 @@ IPHONE 4-4S-5 LANDSCAPE (568x320)
     padding-top: 50px;
     padding-bottom: 50px;
   }
-}
 
-@media (min-width: 768px) {
-  .navbar-default .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .navbar-header {
-    float: none; 
-  }
-}
 /********************************
 IPHONE 4-4S-5 PORTRAIT (320x568)
 ********************************/
+    /* ===================================================
+   KODE KHUSUS: MELEBARKAN & MEMAKSA NAVBAR SEJAJAR
+   =================================================== */
+
+/* Kita targetkan di layar komputer (lebar minimal 768px) */
+@media (min-width: 768px) {
+  
+  /* 1. Paksa container utama menggunakan Flexbox */
+  .navbar-default .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important; /* Paksa melebar penuh agar ruangnya muat */
+    max-width: 1200px;      /* Batas maksimal lebar konten agar tetap rapi */
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* 2. Matikan sistem float bawaan Bootstrap yang merusak susunan */
+  .navbar-header {
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* 3. Paksa menu navigasi yang tersembunyi agar langsung muncul di samping */
+  .navbar-collapse.collapse {
+    display: flex !important;
+    visibility: visible !important;
+    float: none !important;
+  }
+
+  /* 4. Susun daftar link menu (ul) agar berjejer horizontal */
+  .navbar-nav {
+    float: none !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  /* 5. Berikan jarak ideal antar-menu teks */
+  .navbar-nav > li {
+    float: none !important;
+  }
+  
+  .navbar-nav > li > a {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* 6. Atur posisi text login ("Halo, farah") dan tombol Logout */
+  #userInfo {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    display: inline-block;
+  }
+
+  #authArea {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .nav-cta {
+    margin-top: 0 !important; /* Hilangkan margin atas yang bikin melenceng */
+    padding: 5px 10px;
+  }
+}
